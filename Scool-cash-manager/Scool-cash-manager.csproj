@@ -8,10 +8,33 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>Scool_cash_manager</RootNamespace>
     <AssemblyName>Scool-cash-manager</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>true</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <TargetCulture>fr</TargetCulture>
+    <ProductName>School Cash-manger</ProductName>
+    <PublisherName>kapapa</PublisherName>
+    <SuiteName>cash-manager</SuiteName>
+    <MinimumRequiredVersion>1.0.0.0</MinimumRequiredVersion>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.0</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -32,9 +55,43 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icons8_money_bag.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>8CD4C83BA6B8705B867713903076B762725991C5</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>Scool-cash-manager_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="itextsharp">
+      <HintPath>..\..\LOGCIELS ACHATES\KILIMA\Let us pay\Let us pay\bin\Debug\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=8.0.19.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="mysqlbackup">
+      <HintPath>..\..\LOGCIELS ACHATES\KILIMA\Let us pay\Let us pay\bin\Debug\mysqlbackup.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,16 +103,398 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="Connexion.cs" />
+    <Compile Include="FrmAccompte.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="FrmAccompte.Designer.cs">
+      <DependentUpon>FrmAccompte.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmLienDeParente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLienDeParente.Designer.cs">
+      <DependentUpon>FrmLienDeParente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMenuPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMenuPrincipal.Designer.cs">
+      <DependentUpon>FrmMenuPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmApercuAvantImpression.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmApercuAvantImpression.Designer.cs">
+      <DependentUpon>FrmApercuAvantImpression.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAvance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAvance.Designer.cs">
+      <DependentUpon>FrmAvance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmEnfantAcharge.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmEnfantAcharge.Designer.cs">
+      <DependentUpon>FrmEnfantAcharge.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmNouvelleAvanceSalaire.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNouvelleAvanceSalaire.Designer.cs">
+      <DependentUpon>frmNouvelleAvanceSalaire.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmConfigClasses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmConfigClasses.Designer.cs">
+      <DependentUpon>frmConfigClasses.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmConfigDAP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmConfigDAP.Designer.cs">
+      <DependentUpon>FrmConfigDAP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmConfigExamen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmConfigExamen.Designer.cs">
+      <DependentUpon>frmConfigExamen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmConfigExetat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmConfigExetat.Designer.cs">
+      <DependentUpon>frmConfigExetat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmConfigFraisEtat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmConfigFraisEtat.Designer.cs">
+      <DependentUpon>FrmConfigFraisEtat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmConfigFraisMensuel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmConfigFraisMensuel.Designer.cs">
+      <DependentUpon>frmConfigFraisMensuel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmConfigurationApplication.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmConfigurationApplication.Designer.cs">
+      <DependentUpon>FrmConfigurationApplication.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDetailsEleve.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDetailsEleve.Designer.cs">
+      <DependentUpon>frmDetailsEleve.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmEcheance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmEcheance.Designer.cs">
+      <DependentUpon>FrmEcheance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmEnseignant.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmEnseignant.Designer.cs">
+      <DependentUpon>FrmEnseignant.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmModifierEleve.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmModifierEleve.Designer.cs">
+      <DependentUpon>FrmModifierEleve.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmNouveauEleveDAP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmNouveauEleveDAP.Designer.cs">
+      <DependentUpon>FrmNouveauEleveDAP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmNouveauEnseignant.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmNouveauEnseignant.Designer.cs">
+      <DependentUpon>FrmNouveauEnseignant.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmNouveauPaiementDAP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmNouveauPaiementDAP.Designer.cs">
+      <DependentUpon>FrmNouveauPaiementDAP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmNouveauPaiementExetat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNouveauPaiementExetat.Designer.cs">
+      <DependentUpon>frmNouveauPaiementExetat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmNouveauEleve.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmNouveauEleve.Designer.cs">
+      <DependentUpon>FrmNouveauEleve.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmExetat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmExetat.Designer.cs">
+      <DependentUpon>frmExetat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmFraisEtat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmFraisEtat.Designer.cs">
+      <DependentUpon>FrmFraisEtat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmFraisExamen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFraisExamen.Designer.cs">
+      <DependentUpon>frmFraisExamen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmFraisMensuel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmFraisMensuel.Designer.cs">
+      <DependentUpon>FrmFraisMensuel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmInscription.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmInscription.Designer.cs">
+      <DependentUpon>FrmInscription.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmInsolvables.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInsolvables.Designer.cs">
+      <DependentUpon>frmInsolvables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmJournalCentralise.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmJournalCentralise.Designer.cs">
+      <DependentUpon>FrmJournalCentralise.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmJournalFrais.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmJournalFrais.Designer.cs">
+      <DependentUpon>frmJournalFrais.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmManuel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmManuel.Designer.cs">
+      <DependentUpon>frmManuel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmConfigManuels.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmConfigManuels.Designer.cs">
+      <DependentUpon>FrmConfigManuels.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmNouveauPaiementFraisEtat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmNouveauPaiementFraisEtat.Designer.cs">
+      <DependentUpon>FrmNouveauPaiementFraisEtat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmNouveauPaiementManuels.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmNouveauPaiementManuels.Designer.cs">
+      <DependentUpon>FrmNouveauPaiementManuels.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmNouveauPaiementMensuel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNouveauPaiementMensuel.Designer.cs">
+      <DependentUpon>frmNouveauPaiementMensuel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmNouveauPaiementExamen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNouveauPaiementExamen.Designer.cs">
+      <DependentUpon>frmNouveauPaiementExamen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmNouvelAccompte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmNouvelAccompte.Designer.cs">
+      <DependentUpon>FrmNouvelAccompte.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPaiementDAP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPaiementDAP.Designer.cs">
+      <DependentUpon>FrmPaiementDAP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSolvables.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSolvables.Designer.cs">
+      <DependentUpon>frmSolvables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTableauDeBord.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTableauDeBord.Designer.cs">
+      <DependentUpon>FrmTableauDeBord.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmVuDensemble.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmVuDensemble.Designer.cs">
+      <DependentUpon>FrmVuDensemble.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Operations.cs" />
+    <Compile Include="PDFBackgroundHelper.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Views.cs" />
+    <EmbeddedResource Include="FrmAccompte.resx">
+      <DependentUpon>FrmAccompte.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLienDeParente.resx">
+      <DependentUpon>FrmLienDeParente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMenuPrincipal.resx">
+      <DependentUpon>FrmMenuPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmApercuAvantImpression.resx">
+      <DependentUpon>FrmApercuAvantImpression.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAvance.resx">
+      <DependentUpon>FrmAvance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmEnfantAcharge.resx">
+      <DependentUpon>FrmEnfantAcharge.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNouvelleAvanceSalaire.resx">
+      <DependentUpon>frmNouvelleAvanceSalaire.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmConfigClasses.resx">
+      <DependentUpon>frmConfigClasses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmConfigDAP.resx">
+      <DependentUpon>FrmConfigDAP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmConfigExamen.resx">
+      <DependentUpon>frmConfigExamen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmConfigExetat.resx">
+      <DependentUpon>frmConfigExetat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmConfigFraisEtat.resx">
+      <DependentUpon>FrmConfigFraisEtat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmConfigFraisMensuel.resx">
+      <DependentUpon>frmConfigFraisMensuel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmConfigurationApplication.resx">
+      <DependentUpon>FrmConfigurationApplication.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDetailsEleve.resx">
+      <DependentUpon>frmDetailsEleve.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmEcheance.resx">
+      <DependentUpon>FrmEcheance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmEnseignant.resx">
+      <DependentUpon>FrmEnseignant.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmModifierEleve.resx">
+      <DependentUpon>FrmModifierEleve.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmNouveauEleveDAP.resx">
+      <DependentUpon>FrmNouveauEleveDAP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmNouveauEnseignant.resx">
+      <DependentUpon>FrmNouveauEnseignant.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmNouveauPaiementDAP.resx">
+      <DependentUpon>FrmNouveauPaiementDAP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNouveauPaiementExetat.resx">
+      <DependentUpon>frmNouveauPaiementExetat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmNouveauEleve.resx">
+      <DependentUpon>FrmNouveauEleve.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmExetat.resx">
+      <DependentUpon>frmExetat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmFraisEtat.resx">
+      <DependentUpon>FrmFraisEtat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFraisExamen.resx">
+      <DependentUpon>frmFraisExamen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmFraisMensuel.resx">
+      <DependentUpon>FrmFraisMensuel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmInscription.resx">
+      <DependentUpon>FrmInscription.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInsolvables.resx">
+      <DependentUpon>frmInsolvables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmJournalCentralise.resx">
+      <DependentUpon>FrmJournalCentralise.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmJournalFrais.resx">
+      <DependentUpon>frmJournalFrais.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmManuel.resx">
+      <DependentUpon>frmManuel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmConfigManuels.resx">
+      <DependentUpon>FrmConfigManuels.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmNouveauPaiementFraisEtat.resx">
+      <DependentUpon>FrmNouveauPaiementFraisEtat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmNouveauPaiementManuels.resx">
+      <DependentUpon>FrmNouveauPaiementManuels.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNouveauPaiementMensuel.resx">
+      <DependentUpon>frmNouveauPaiementMensuel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNouveauPaiementExamen.resx">
+      <DependentUpon>frmNouveauPaiementExamen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmNouvelAccompte.resx">
+      <DependentUpon>FrmNouvelAccompte.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPaiementDAP.resx">
+      <DependentUpon>FrmPaiementDAP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSolvables.resx">
+      <DependentUpon>frmSolvables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTableauDeBord.resx">
+      <DependentUpon>FrmTableauDeBord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmVuDensemble.resx">
+      <DependentUpon>FrmVuDensemble.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -65,7 +504,9 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -75,9 +516,44 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Scool-cash-manager_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AxFOXITREADERLib">
+      <Guid>{3A8BD65E-9922-4162-A649-83F2D5326BBE}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="FOXITREADERLib">
+      <Guid>{3A8BD65E-9922-4162-A649-83F2D5326BBE}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="icons8_money_bag.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6 %28x86 et x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
