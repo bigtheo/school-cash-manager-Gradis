@@ -264,6 +264,8 @@ namespace Scool_cash_manager
                         {
                             MessageBox.Show("Paiement enregistré avec succès !", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             CreerRecu();
+                            Operations.PrintPDFByProcess();
+                            
                         }
                     }
                     catch (MySqlException ex)
@@ -337,7 +339,7 @@ namespace Scool_cash_manager
             #region Création du document
             this.Cursor = Cursors.WaitCursor;
 
-            iTextSharp.text.Rectangle taille = new iTextSharp.text.Rectangle(new iTextSharp.text.Rectangle(288, 720)); // le format(longueur et largueur) du récu
+            Rectangle taille = new Rectangle(new Rectangle(288, 720)); // le format(longueur et largueur) du récu
             Document doc = new Document(taille);
             doc.SetMargins(30, 30, 7, 30);
             try
@@ -490,8 +492,8 @@ namespace Scool_cash_manager
 
             //on ferme le document après écriture
             doc.Close();
-            new FrmApercuAvantImpression().ShowDialog();
-
+           // new FrmApercuAvantImpression().ShowDialog();
+          
             this.Cursor = Cursors.Default;
         }
 

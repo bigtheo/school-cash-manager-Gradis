@@ -123,7 +123,16 @@ namespace Scool_cash_manager
                 cmd.Connection = Connexion.con;
                 cmd.CommandText = requete;
 
-                lblEnOrdre.Text = Convert.ToString(cmd.ExecuteScalar());
+                try
+                {
+                    lblEnOrdre.Text = Convert.ToString(cmd.ExecuteScalar());
+
+                }
+                catch (MySqlException ex)
+                {
+
+                    MessageBox.Show(ex.Message);
+                }
                 
             }
         }

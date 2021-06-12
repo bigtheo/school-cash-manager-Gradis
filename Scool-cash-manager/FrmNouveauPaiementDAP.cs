@@ -246,6 +246,7 @@ namespace Scool_cash_manager
                            if(cmd.ExecuteNonQuery() == 1)
                             {
                                 MessageBox.Show("Enregistrement du DAP effectué !");
+                                Operations.PrintPDFByProcess();
                             }
                         }
                         else
@@ -437,7 +438,7 @@ namespace Scool_cash_manager
 
             //on ferme le document après écriture
             doc.Close();
-            new FrmApercuAvantImpression().ShowDialog();
+           // new FrmApercuAvantImpression().ShowDialog();
 
             this.Cursor = Cursors.Default;
         }

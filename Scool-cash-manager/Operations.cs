@@ -450,5 +450,34 @@ namespace Scool_cash_manager
             }
         }
         #endregion
+
+        #region méthode stattic sur l'impression
+        public static void PrintPDFByProcess()
+        {
+            string fileName = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "ficher_rapport.pdf");
+            try
+            {
+                using (Process p = new Process())
+                {
+                    p.StartInfo = new ProcessStartInfo()
+                    {
+                        CreateNoWindow = true,
+                        Verb = "print",
+                        FileName = fileName
+                    };
+
+                    p.Start();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+           
+
+        }
+        #endregion
+
+
     }
 }

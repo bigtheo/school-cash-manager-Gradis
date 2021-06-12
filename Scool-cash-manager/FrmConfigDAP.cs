@@ -13,8 +13,19 @@ namespace Scool_cash_manager
         public FrmConfigDAP()
         {
             InitializeComponent();
-            AfficherDAP();
+            ChargerInformationDAP();  
+           
+        }
+        private void ChargerInformationDAP()
+        {
             Operations.ChargerClassesDansComboBox(cbx_classe);
+
+            if (cbx_classe.Items.Count > 0)
+            {
+                cbx_classe.SelectedIndex = 0;
+                AfficherDAP();
+            }
+                
         }
 
         private void BtnNouveau_Click(object sender, EventArgs e)
