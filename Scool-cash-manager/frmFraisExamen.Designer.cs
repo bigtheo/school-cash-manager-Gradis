@@ -1,6 +1,6 @@
 ﻿namespace Scool_cash_manager
 {
-    partial class frmFraisExamen
+    partial class FrmFraisExamen
     {
         /// <summary>
         /// Required designer variable.
@@ -93,6 +93,7 @@
             this.btnImprimer.TabIndex = 3;
             this.btnImprimer.Text = "Imprimer";
             this.btnImprimer.UseVisualStyleBackColor = false;
+            this.btnImprimer.Click += new System.EventHandler(this.btnImprimer_Click);
             // 
             // btnDetails
             // 

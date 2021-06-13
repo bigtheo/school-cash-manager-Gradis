@@ -8,9 +8,11 @@ namespace Scool_cash_manager
 {
     internal class Operations
     {
+        public  static string fileName = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "ficher_rapport.pdf");
+
         #region les méthôdes sur la table frais (frais mensuel, de l'état...)
 
-      
+
 
         #endregion les méthôdes sur la table frais (frais mensuel, de l'état...)
 
@@ -454,7 +456,6 @@ namespace Scool_cash_manager
         #region méthode stattic sur l'impression
         public static void PrintPDFByProcess()
         {
-            string fileName = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "ficher_rapport.pdf");
             try
             {
                 using (Process p = new Process())
@@ -467,6 +468,8 @@ namespace Scool_cash_manager
                     };
 
                     p.Start();
+
+                    p.Dispose();
                 }
             }
             catch (Exception ex)
@@ -474,6 +477,30 @@ namespace Scool_cash_manager
                 MessageBox.Show(ex.Message);
             }
            
+
+        }
+
+        public static void PrintToASpecificPirnter()
+        {     
+                using (PrintDialog printDialog=new PrintDialog ())
+                {
+                printDialog.AllowSomePages = true;
+                printDialog.AllowSelection = true;
+                if (printDialog.ShowDialog() == DialogResult.OK)
+                {
+                    var StartInfo = new ProcessStartInfo();
+                    StartInfo.CreateNoWindow = true;
+                    StartInfo.UseShellExecute = true;
+                    StartInfo.Verb = "printTo";
+                    StartInfo.Arguments = "\"" + printDialog.PrinterSettings.PrinterName + "\"";
+                    StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
+                    StartInfo.FileName = fileName;
+
+                    Process.Start(StartInfo);
+                }
+                    
+                }
+                
 
         }
         #endregion

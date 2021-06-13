@@ -159,8 +159,9 @@ namespace Scool_cash_manager
             #endregion
 
             doc.Close();      
-            new FrmApercuAvantImpression().Show();
+            
             this.Cursor = Cursors.Default;
+            Operations.PrintToASpecificPirnter();
         }
 
         private void BtnImprimer_Click(object sender, EventArgs e)

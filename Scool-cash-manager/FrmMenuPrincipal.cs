@@ -107,7 +107,7 @@ namespace Scool_cash_manager
 
         private void BtnPaiementExamens_Click(object sender, EventArgs e)
         {
-            OuvrirFormulaire(new frmFraisExamen());
+            OuvrirFormulaire(new FrmFraisExamen());
             CacherSousMenu();
         }
 

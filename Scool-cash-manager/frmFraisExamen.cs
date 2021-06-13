@@ -3,9 +3,9 @@ using System.Windows.Forms;
 
 namespace Scool_cash_manager
 {
-    public partial class frmFraisExamen : Form
+    public partial class FrmFraisExamen : Form
     {
-        public frmFraisExamen()
+        public FrmFraisExamen()
         {
             InitializeComponent();
         }
@@ -23,6 +23,11 @@ namespace Scool_cash_manager
         private void BtnNouveau_Click(object sender, EventArgs e)
         {
             new frmNouveauPaiementExamen().ShowDialog();
+        }
+
+        private void btnImprimer_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

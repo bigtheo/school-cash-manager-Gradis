@@ -142,7 +142,7 @@ namespace Scool_cash_manager
 
             doc.Close();
             this.Cursor = Cursors.Default;
-            new FrmApercuAvantImpression().Show();
+            Operations.PrintToASpecificPirnter();
         }
 
         private void BtnImprimer_Click(object sender, EventArgs e)

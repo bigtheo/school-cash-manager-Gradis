@@ -200,7 +200,7 @@ namespace Scool_cash_manager
 
             doc.Close();
             this.Cursor = Cursors.Default;
-            new FrmApercuAvantImpression().Show();
+            Operations.PrintToASpecificPirnter();
         }
     }
 }
