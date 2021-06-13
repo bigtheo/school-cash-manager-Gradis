@@ -3,9 +3,9 @@ using System.Windows.Forms;
 
 namespace Scool_cash_manager
 {
-    public partial class frmFraisExamen : Form
+    public partial class FrmFraisExamen : Form
     {
-        public frmFraisExamen()
+        public FrmFraisExamen()
         {
             InitializeComponent();
         }

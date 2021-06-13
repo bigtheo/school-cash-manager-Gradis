@@ -1,6 +1,6 @@
 ﻿namespace Scool_cash_manager
 {
-    partial class frmFraisExamen
+    partial class FrmFraisExamen
     {
         /// <summary>
         /// Required designer variable.

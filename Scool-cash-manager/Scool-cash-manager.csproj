@@ -29,8 +29,8 @@
     <PublisherName>kapapa</PublisherName>
     <SuiteName>cash-manager</SuiteName>
     <MinimumRequiredVersion>1.0.0.0</MinimumRequiredVersion>
-    <ApplicationRevision>1</ApplicationRevision>
-    <ApplicationVersion>1.0.0.1</ApplicationVersion>
+    <ApplicationRevision>11</ApplicationRevision>
+    <ApplicationVersion>1.0.0.11</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -254,11 +254,11 @@
     <Compile Include="FrmFraisEtat.Designer.cs">
       <DependentUpon>FrmFraisEtat.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmFraisExamen.cs">
+    <Compile Include="FrmFraisExamen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmFraisExamen.Designer.cs">
-      <DependentUpon>frmFraisExamen.cs</DependentUpon>
+    <Compile Include="FrmFraisExamen.Designer.cs">
+      <DependentUpon>FrmFraisExamen.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmFraisMensuel.cs">
       <SubType>Form</SubType>
@@ -436,8 +436,8 @@
     <EmbeddedResource Include="FrmFraisEtat.resx">
       <DependentUpon>FrmFraisEtat.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmFraisExamen.resx">
-      <DependentUpon>frmFraisExamen.cs</DependentUpon>
+    <EmbeddedResource Include="FrmFraisExamen.resx">
+      <DependentUpon>FrmFraisExamen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmFraisMensuel.resx">
       <DependentUpon>FrmFraisMensuel.cs</DependentUpon>
