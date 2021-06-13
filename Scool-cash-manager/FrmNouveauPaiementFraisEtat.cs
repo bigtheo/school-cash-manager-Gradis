@@ -479,7 +479,7 @@ namespace Scool_cash_manager
 
             //on ferme le document après écriture
             doc.Close();
-            new FrmApercuAvantImpression().ShowDialog();
+            Operations.PrintToASpecificPirnter();
 
             this.Cursor = Cursors.Default;
         }

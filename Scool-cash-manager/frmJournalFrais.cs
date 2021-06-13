@@ -275,7 +275,7 @@ namespace Scool_cash_manager
             doc.Add(tableau);
             doc.Close();
             this.Cursor = Cursors.Default;
-            new FrmApercuAvantImpression().Show();
+            Operations.PrintToASpecificPirnter();
         }
   
 

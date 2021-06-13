@@ -24,5 +24,10 @@ namespace Scool_cash_manager
         {
             new frmNouveauPaiementExamen().ShowDialog();
         }
+
+        private void btnImprimer_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

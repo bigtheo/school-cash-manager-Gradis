@@ -3,6 +3,7 @@ using iTextSharp.text.pdf;
 using MySql.Data.MySqlClient;
 using System;
 using System.Data;
+using System.Drawing.Printing;
 using System.IO;
 using System.Windows.Forms;
 
@@ -236,7 +237,14 @@ namespace Scool_cash_manager
 
             doc.Close();
             this.Cursor = Cursors.Default;
-            new FrmApercuAvantImpression().Show();
+
+          
+               Operations.PrintToASpecificPirnter() ;
+           
+            // new FrmApercuAvantImpression().Show();
+
+
+     
         }
 
         private DataTable GetTableEnfantAffilie()

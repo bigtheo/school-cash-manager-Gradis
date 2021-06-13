@@ -775,9 +775,10 @@ namespace Scool_cash_manager
 
             //on ferme le document après écriture
             doc.Close();
-            new FrmApercuAvantImpression().ShowDialog();
+            
 
             this.Cursor = Cursors.Default;
+            Operations.PrintToASpecificPirnter();
         }
 
         private string ObtenirAdresse()
