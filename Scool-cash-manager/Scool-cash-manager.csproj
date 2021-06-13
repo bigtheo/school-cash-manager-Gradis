@@ -122,12 +122,6 @@
     <Compile Include="FrmMenuPrincipal.Designer.cs">
       <DependentUpon>FrmMenuPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmApercuAvantImpression.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmApercuAvantImpression.Designer.cs">
-      <DependentUpon>FrmApercuAvantImpression.cs</DependentUpon>
-    </Compile>
     <Compile Include="FrmAvance.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -376,9 +370,6 @@
     <EmbeddedResource Include="FrmMenuPrincipal.resx">
       <DependentUpon>FrmMenuPrincipal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmApercuAvantImpression.resx">
-      <DependentUpon>FrmApercuAvantImpression.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FrmAvance.resx">
       <DependentUpon>FrmAvance.cs</DependentUpon>
     </EmbeddedResource>
@@ -520,25 +511,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <COMReference Include="AxFOXITREADERLib">
-      <Guid>{3A8BD65E-9922-4162-A649-83F2D5326BBE}</Guid>
-      <VersionMajor>1</VersionMajor>
-      <VersionMinor>0</VersionMinor>
-      <Lcid>0</Lcid>
-      <WrapperTool>aximp</WrapperTool>
-      <Isolated>False</Isolated>
-    </COMReference>
-    <COMReference Include="FOXITREADERLib">
-      <Guid>{3A8BD65E-9922-4162-A649-83F2D5326BBE}</Guid>
-      <VersionMajor>1</VersionMajor>
-      <VersionMinor>0</VersionMinor>
-      <Lcid>0</Lcid>
-      <WrapperTool>tlbimp</WrapperTool>
-      <Isolated>False</Isolated>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-    </COMReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="icons8_money_bag.ico" />

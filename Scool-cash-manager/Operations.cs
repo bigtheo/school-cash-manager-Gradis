@@ -484,6 +484,8 @@ namespace Scool_cash_manager
         {     
                 using (PrintDialog printDialog=new PrintDialog ())
                 {
+                printDialog.AllowSomePages = true;
+                printDialog.AllowSelection = true;
                 if (printDialog.ShowDialog() == DialogResult.OK)
                 {
                     var StartInfo = new ProcessStartInfo();
