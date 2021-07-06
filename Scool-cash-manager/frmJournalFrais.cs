@@ -277,12 +277,39 @@ namespace Scool_cash_manager
             this.Cursor = Cursors.Default;
             Operations.PrintToASpecificPirnter();
         }
-  
-
-            
-            #endregion
 
 
-          
+
+
+
+        #endregion
+
+        private void BtnAnnuler_Click(object sender, EventArgs e)
+        {
+            if (dgvliste.CurrentRow.Cells[0].Value.ToString() == "-")
+                return;
+            int id = Convert.ToInt32(dgvliste.CurrentRow.Cells[0].Value);
+            if (id != 0)
+            {
+                string sql = "delete from paiement_mensuel where id=@id";
+                MySqlParameter p_id = new MySqlParameter("@id", MySqlDbType.Int64)
+                {
+                    Value = id
+                };
+                
+                using (MySqlCommand cmd=new MySqlCommand (sql,Connexion.con))
+                {
+                    cmd.Parameters.Add(p_id);
+                    DialogResult dr = MessageBox.Show($"voulez-vous annuler le recu N° {id} ?","Confirmation",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
+                    if (dr == DialogResult.Yes)
+                    {
+                        int rowsAffected = cmd.ExecuteNonQuery();
+                        MessageBox.Show("Annulation du reçu effectuée ");
+                    }
+                    
+
+                }
+            }
         }
+    }
     }
